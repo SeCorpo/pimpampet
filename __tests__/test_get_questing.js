@@ -38,7 +38,6 @@ describe('StringChecker', () => {
 
         expect(QUESTION_FIELD.textContent).toMatch(/\S+/);
     });
-
     test('always passes (test check)', () => {
         expect(true).toBe(true);
     });
