@@ -1,9 +1,13 @@
+/**
+ * @jest-environment jsdom
+ */
+
 require('@testing-library/jest-dom');
 const fs = require('fs');
 const path = require('path');
 
-const HTML_FILE_PATH = path.resolve(__dirname, './index.html');
-const JS_FILE_PATH = path.resolve(__dirname, './stringChecker.js');
+const HTML_FILE_PATH = path.resolve(__dirname, '../src/index.html');
+const JS_FILE_PATH = path.resolve(__dirname, '../src/main.js');
 
 const GET_QUESTION_BUTTON_ID = 'get_question_button';
 const QUESTION_FIELD_ID = 'question_field';
@@ -32,7 +36,7 @@ describe('StringChecker', () => {
     });
 
     test('displays a string in the question field when the get_question_button is pressed', () => {
-        expect(QUESTION_FIELD.textContent).toBe('');
+        expect(QUESTION_FIELD.textContent).toBe("Press the button to get a question!");
 
         GET_QUESTION_BUTTON.click();
 
